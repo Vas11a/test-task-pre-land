@@ -1,0 +1,283 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:  transparent;
+}
+
+body{
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(210,206,206,1) 100%);
+}
+
+
+.wrapper {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  padding: 50px 100px;
+  height: 100vh;
+
+}
+
+
+.part {
+  flex: 1;
+}
+
+.left-part{
+  animation: scale 1s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: auto;
+  height: calc(100vh - 100px);
+  position: absolute;
+  max-width: 440px;
+  max-height: 750px;
+  cursor: pointer;
+  
+}
+
+.img2{
+  transform: rotateY(180deg);
+}
+
+@keyframes scale {
+      from {
+        transform: scale(.5);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+        
+      }
+    }
+
+
+
+.right-part {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Abril Fatface', cursive;
+  animation: slide 1s ease-in-out forwards;
+}
+
+@keyframes slide {
+      from {
+        transform: translate(300px);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: translate(0);
+        
+      }
+    }
+
+.title {
+  font-size: 60px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
+.arrow{
+  width: 200px;
+  height: auto;
+  position: absolute;
+  bottom: -200px;
+  left: -170px;
+  transform: rotate(-80deg);
+  transition-duration: .7s;
+  cursor: pointer;
+}
+
+.arrow:hover{
+  transform: rotate(-50deg);
+}
+
+.sub-title {
+  padding-top: 100px;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+input{
+  width: 350px;
+  font-size: 30px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: 3px solid black;
+  outline: 0;
+}
+
+::placeholder{
+  font-weight: bold;
+  font-size: 25px;
+  padding-bottom: 2.5px;
+}
+
+.button {
+  margin-top: 20px;
+  font-size: 30px;
+  background-color: #A3C8E8;
+  border-radius: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  user-select: none;
+  transition-duration: .7s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button:hover{
+  background-color: #6D9EC9;
+  transform: scale(1.15);
+}
+
+.button:active{
+  background-color: #A3C8E8;
+  transform: scale(1);
+}
+
+
+@media screen and (max-width: 1250px) {
+  .wrapper{
+    padding: 40px;
+  }
+  .img {
+    width: auto;
+    height: calc(70vh);
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .right-part{
+    align-items: flex-end;
+  }
+  .title{
+    text-align: right;
+  }
+  .sub-title{
+    text-align: right;
+  }
+  .arrow{
+    top: 120px;
+    left: -100px;
+  }
+}
+
+@media screen and ( max-width: 1020px) {
+  .title{
+    text-align: right;
+    font-size: 50px;
+  }
+  .sub-title{
+    padding-top: 50px;
+  }
+}
+
+@media screen and ( max-width: 870px) {
+  .wrapper{
+    flex-direction: column-reverse;
+    overflow: inherit;
+  }
+  .right-part {
+    justify-content: start;
+    animation: scale 1s ease-in-out forwards;
+  }
+  .right-part{
+    align-items: flex-start;
+  }
+  .title{
+    text-align: left;
+  }
+  .sub-title{
+    text-align: left;
+    padding-top: 30px;
+  }
+  .arrow{
+    display: none;
+  }
+  .left-part{
+    padding-top: 0px;
+    margin-top: -600px;
+    justify-content: flex-end;
+  }
+  img.img2{
+    opacity: .5;
+  }
+  .img{
+    opacity: 1;
+  }
+}
+
+
+@media screen and ( max-width: 700px) {
+  .title{
+    font-size: 40px;
+  }
+  .right-part{
+    justify-content: start;
+  }
+  .img{
+    opacity: .5;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .title{
+    font-size: 37px;
+  }
+  .sub-title{
+    font-size: 25px;
+  }
+  input{
+    width: 280px;
+    font-size: 25px;
+  }
+  .button{
+    font-size: 30px ;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+   .right-part{
+    align-items: center;
+  }
+  .title{
+    text-align: center;
+  }
+  .sub-title{
+    text-align: center;
+  }
+  .left-part{
+    justify-content: center;
+    margin-top: -500px;
+  }
+  .img{
+    opacity: .6;
+  }
+  .wrapper{
+    padding: 10px;
+  }
+  .sub-title{
+    padding-top: 20px;
+  }
+  body{
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(210,206,206,1) 100%);
+  }
+}
